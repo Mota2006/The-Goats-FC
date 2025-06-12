@@ -1,0 +1,425 @@
+/* Add Google Fonts: Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+    /* Updated color variables to match the logo */
+    --primary-color: #1a1a1a; /* Dark almost black, from logo background */
+    --secondary-color: #b8860b; /* Darker gold for accents/hover states, from logo's gold */
+    --accent-color: #d4af37; /* Gold/Yellow from the logo */
+    --background-color: #f0f2f5; /* Light gray to complement the dark/gold theme */
+    --card-background: #ffffff; /* Crisp white for cards */
+    --text-color: #4b5563; /* neutral gray-600, kept for general text readability */
+    --text-heading-color: #1a1a1a; /* Dark almost black, from logo background, for headings */
+
+    --border-radius: 0.75rem;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s;
+
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px; /* Base font size */
+}
+
+/* Reset and base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Changed to column to stack header, nav, and main */
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    padding-top: 90px; /* Add padding to body to prevent content from being hidden by fixed navbar */
+}
+
+header {
+    font-weight: 700;
+    font-size: 3rem; /* Slightly reduced for better fit with content */
+    color: var(--primary-color);
+    padding: 2rem 1rem 1.5rem; /* Adjusted padding */
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    user-select: none;
+}
+
+/* Navbar styles */
+nav.navbar {
+    background-color: #ffffff; /* White background */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    padding: 0.5rem 1rem;
+}
+
+/* Active and hover states for nav links */
+.nav-link.active,
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--primary-color);
+    border-bottom-color: #daa520;
+    outline: none;
+}
+
+/* Individual nav link */
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-weight: 600;
+    border-bottom: 3px solid transparent;
+    text-transform: capitalize;
+    transition: color var(--transition-speed), border-bottom-color var(--transition-speed);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; /* Center entire navbar content */
+    align-items: center;
+    gap: 1rem; /* Spacing between logo and nav links */
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 0.5rem 0;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.navbar-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Spacing between nav links */
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: color var(--transition-speed), background-color var(--transition-speed);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    background-color: #f0f0f0;
+}
+
+.nav-link.exit-link {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.4rem 0.75rem;
+    margin-left: 1rem;
+}
+
+.nav-link.exit-link:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* Main content area */
+main {
+    width: 100%;
+    max-width: 900px; /* Max width for main content */
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 24px var(--shadow-light);
+    padding: 2.5rem; /* Consistent padding */
+    margin-bottom: 2rem; /* Space at the bottom */
+    color: var(--text-heading-color);
+    box-sizing: border-box;
+}
+
+/* Section specific styling within main */
+section {
+    margin-bottom: 2rem; /* Space between sections */
+}
+
+section h2, section h3 {
+    font-weight: 700;
+    font-size: 2rem; /* Adjusted for section headers */
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+    letter-spacing: 0.02em;
+    user-select: none;
+}
+
+section h3 {
+    font-size: 1.5rem; /* Smaller for sub-headers */
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+/* Form input and label styling */
+form > div:first-child, .form-group { /* .form-group for general form elements */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Reduced gap slightly */
+    margin-bottom: 1.5rem;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    display: block;
+    color: var(--primary-color);
+    user-select: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius);
+    border: 1.5px solid #ced4da;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    font-family: inherit;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+    background-color: #fff;
+    resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+    background-color: #fff;
+}
+
+/* Custom select styling for dropdown arrows */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down' viewBox='0 0 24 24'%3E%3Cpolyline points='6 9 12 15 18 9' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 18px 18px;
+    padding-right: 2.5rem; /* Make space for the custom arrow */
+}
+
+/* Submit button */
+button.submit-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    user-select: none;
+    box-shadow: 0 2px 6px var(--shadow-light);
+    margin-top: 1rem; /* Space above button */
+}
+
+button.submit-btn:hover,
+button.submit-btn:focus {
+    background-color: var(--secondary-color);
+    transform: scale(1.03); /* Slightly less aggressive scale for general buttons */
+    outline: none;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    table-layout: fixed; /* Adicione esta linha */
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+table th, table td {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0; /* Lighter border for rows */
+    word-wrap: break-word;
+}
+
+table th {
+    background-color: var(--primary-color);
+    color: var(--card-background); /* White text on dark header */
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none; /* No border on the last row */
+}
+
+table tbody tr:hover {
+    background-color: #f5f5f5; /* Light hover effect for rows */
+}
+
+/* Table action buttons */
+table td button.submit-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin-top: 0; /* Override margin from general button style */
+    box-shadow: none; /* Remove shadow for smaller buttons */
+}
+table td button.submit-btn:hover {
+    transform: scale(1.05); /* Slightly more pronounced hover for smaller buttons */
+}
+
+/* Notification Message */
+#notification {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    display: none; /* Hidden by default, shown by JS */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        font-size: 2.2rem;
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    nav {
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    nav button, .nav-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    table th, table td {
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    button.submit-btn {
+        padding: 0.75rem 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+    main {
+        padding: 1.5rem;
+    }
+    header {
+        font-size: 1.8rem;
+        padding: 1rem 0.5rem;
+    }
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    nav button, .nav-link {
+        width: 100%;
+    }
+    main {
+        padding: 1rem;
+    }
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 1910px) {
+
+    main {
+        max-width: 1300px; /* Aumente o max-width para o conteúdo principal */
+        padding: 1.5rem;
+    }
+}
+
+.logo-image {
+    height: 80px; /* Adjust height as needed */
+    width: auto;
+    display: block;
+}
+
+.tab-pane.active {
+    display: block;
+    opacity: 1;
+    /* Add this to remove default padding/margins that might create "borders" */
+    padding: 0;
+    margin: 0;
+}
+
+#home img {
+    max-height: 100%; /* Garante que a imagem não excede a altura do #home */
+    width: auto; /* Mantém a proporção da imagem */
+    display: block; /* Ensures no extra space below the image */
+    object-fit: contain; /* or 'cover' depending on desired cropping/scaling */
+}
+.tab-pane.container {
+    padding: 0; /* Override the default padding for the container class if present */
+}
